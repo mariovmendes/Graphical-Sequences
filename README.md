@@ -6,6 +6,12 @@ The main purpose of this program is to check if
 a given sequence is a graphical sequence and represent 
 it using nodes and edges.
 
+## Preview
+
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install graphviz.
+
+![alt text](https://i.ibb.co/c8TqTQr/Graph-gv.png)
+
 ## Installation
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install graphviz.
