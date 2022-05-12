@@ -29,7 +29,7 @@ import graphviz
 g = graphviz.Graph(format='png')
 
 # Adds a new node to the graph
-g.node(chr(ord('A')+count))
+g.node("node1")
 
 # Creates a new connection between node1 and node2
 g.edge("node1","node2")
