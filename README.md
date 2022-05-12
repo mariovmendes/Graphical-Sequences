@@ -8,7 +8,7 @@ it using nodes and edges.
 
 ## Preview
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install graphviz.
+Graphical representation of a sequence.
 
 ![alt text](https://i.ibb.co/c8TqTQr/Graph-gv.png)
 
