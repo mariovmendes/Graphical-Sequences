@@ -1,9 +1,13 @@
+# Autores:
+# 63008 Mário Mendes
+# 63466 Pedro Vieira
+
 import graphviz
 
 # Função Auxiliar que permite ler todos os números da sequência e
 # ordená-los por ordem decrescente 
 def readSequence():
-	sequence = list(map(int, input().split(" ")))
+	sequence = list(map(int, input("Write the sequence (without the parentheses) : ").split(" ")))
 	sequence.sort(reverse=True)
 	print()
 	print("Sorted sequence: "+ str(sequence))
@@ -74,50 +78,8 @@ def scaleDown(sequence):
 		return copiedSequenced
 	return sequence
 
-def checkIfRelationExists(relations,index1,index2):
-	for x in relations:
-		if index1 in x and index2 in x:
-			return True
-	return False
-
-def generateSimpleGraph(sequence):
-	g = graphviz.Graph()
-	#g.attr(layout='neato')
-	count = 0
-	for x in range(len(sequence)):
-		g.node(str(x),label=chr(ord('A')+count))
-		count = count + 1
-
-	for x in range(len(sequence)-1,-1,-1):
-		for y in range(len(sequence)-1,x,-1):
-			if sequence[y] > 0:
-				sequence[y] = sequence[y] - 1
-				sequence[x] = sequence[x] - 1
-				g.edge(str(x),str(y))
-	g.view()
-
-
-#def generateComplexGraph(sequenceTimeline):
-#	g = graphviz.Graph()
-#	count = 0
-#	for x in range(len(sequenceTimeline[0])):
-#	g.node(str(x),label=chr(ord('A')+count))
-#		count = count + 1
-#	firstSequence = sequenceTimeline[len(sequenceTimeline)-1]
-#	sequenceTimeline.remove(firstSequence)
-#	for nextIndex in range(len(sequenceTimeline)-1,-1,-1):
-#		firstSequence.insert(0,sequenceTimeline[nextIndex][0])
-#		for x in range(firstSequence[0]):
-#			firstSequence[len(firstSequence)-1-x] = firstSequence[len(firstSequence)-1-x] + 1
-#			g.edge(str(len(sequenceTimeline[0])-len(firstSequence)),str(len(sequenceTimeline[0])-1-x))
-		#for x in range(firstSequence[0]):
-		#	firstSequence[x+1] = firstSequence[x+1] + 1
-		#	g.edge(str(len(sequenceTimeline[0])-len(firstSequence)),str(len(sequenceTimeline[0])-len(firstSequence)+x+1))
-#		firstSequence.sort(reverse=True)
-#	g.view()
-
-def generateComplexGraph(sequence):
-	g = graphviz.Graph()
+def generateGraph(sequence):
+	g = graphviz.Graph(format='png')
 	count = 0
 	nodesSequence = []
 	for x in range(len(sequence)):
@@ -137,19 +99,11 @@ def generateComplexGraph(sequence):
 		nodesSequence = sorted(nodesSequence, key= lambda d: d["degree"],reverse=True)
 	g.view()
 
-#	Lema dos apertos de mãos
-#def lam(sequence):
-#	numNotEven = 0
-#	for x in sequence:
-#		if x % 2 != 0:
-#			numNotEven += 1
-#	return numNotEven % 2 == 0
-
 def main():
 	originalSequence = readSequence()
 
 	#S - simplificado
-	#A - sequencia introduzida
+	#C- complexa
 	sequenceTimeline = [originalSequence]
 	sequence = originalSequence.copy()
 	isValid = acceptableRange(sequence) and degreeSumIsEven(sequence) and hasRepeatedDegress(sequence)
@@ -170,16 +124,17 @@ def main():
 			print("The given sequence is not a graphical sequence!")
 
 		if isValid:
-			mode = input("S-Mais simplificado possivel | A-sequencia introduzida: ")
+			print("Which graphical sequence would you like to see?")
+			mode = input("S- The simple sequence | C- The complex sequence : ")
 			print()
 			print("-----------------------")
 			print("Generating .pdf diagram")
 			print("-----------------------")
 			print()
 			if(mode=='S'):
-				generateSimpleGraph(sequenceTimeline[len(sequenceTimeline)-2])
+				generateGraph(sequenceTimeline[len(sequenceTimeline)-2])
 			else:
-				generateComplexGraph(sequenceTimeline[0])
+				generateGraph(sequenceTimeline[0])
 	else:
 		print("Invalid sequence")
 
