@@ -10,7 +10,7 @@ it using nodes and edges.
 
 Graphical representation of a sequence.
 
-![alt text](https://i.ibb.co/c8TqTQr/Graph-gv.png)
+![alt text](https://raw.githubusercontent.com/mendes4dev/Graphical-Sequences/main/Graph.gv.png)
 
 ## Installation
 
