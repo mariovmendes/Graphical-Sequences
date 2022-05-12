@@ -1,5 +1,5 @@
 # Graphical-Sequences
-Small Project for the MD course developed using
+Small project for the MD course developed using
 the Python Programming Language 🐍
 
 The main purpose of this program is to check if 
