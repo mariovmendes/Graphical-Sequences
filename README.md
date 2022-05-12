@@ -9,7 +9,7 @@ it using nodes and edges.
 ## Preview
 
 Graphical representation of a sequence.
-
+(4,4,4,4,4,4)
 ![alt text](https://raw.githubusercontent.com/mendes4dev/Graphical-Sequences/main/Graph.gv.png)
 
 ## Installation
