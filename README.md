@@ -1,5 +1,6 @@
 # Graphical-Sequences
 Small project for the Discrete Mathematics course.
+
 Developed using the Python Programming Language 🐍
 
 The main purpose of this program is to check if 
