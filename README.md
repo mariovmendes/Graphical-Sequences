@@ -1,6 +1,6 @@
 # Graphical-Sequences
-Small project for the Discrete Mathematics course developed using
-the Python Programming Language 🐍
+Small project for the Discrete Mathematics course.
+Developed using the Python Programming Language 🐍
 
 The main purpose of this program is to check if 
 a given sequence is a graphical sequence and represent 
